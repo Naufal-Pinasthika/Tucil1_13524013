@@ -14,33 +14,33 @@ import javafx.scene.text.TextAlignment;
 import javafx.embed.swing.SwingFXUtils;
 
 public class Save {
-        private final Color[] colors = {
-        Color.web("#FFCC80"), 
-        Color.web("#E6EE9C"), 
-        Color.web("#ADD8E6"), 
-        Color.web("#CE93D8"), 
-        Color.web("#FFB7B2"), 
-        Color.web("#F0E68C"), 
-        Color.web("#B5EAD7"), 
-        Color.web("#C7CEEA"), 
-        Color.web("#FF9AA2"), 
-        Color.web("#FFE082"), 
-        Color.web("#A5D6A7"), 
-        Color.web("#90CAF9"), 
-        Color.web("#D8BFD8"), 
-        Color.web("#F8BBD0"),         
-        Color.web("#FF6961"),
-        Color.web("#FFAB91"), 
-        Color.web("#FFF59D"), 
-        Color.web("#C5E1A5"), 
-        Color.web("#81D4FA"), 
-        Color.web("#B39DDB"), 
-        Color.web("#F48FB1"), 
-        Color.web("#FFDAC1"), 
-        Color.web("#E2F0CB"), 
-        Color.web("#B3E5FC"), 
-        Color.web("#E1BEE7"), 
-        Color.web("#80CBC4")  
+    private final Color[] colors = {
+        Color.web("#E74C3C"), 
+        Color.web("#8E44AD"), 
+        Color.web("#3498DB"), 
+        Color.web("#16A085"), 
+        Color.web("#F39C12"), 
+        Color.web("#D35400"), 
+        Color.web("#C0392B"), 
+        Color.web("#27AE60"), 
+        Color.web("#2980B9"), 
+        Color.web("#2C3E50"), 
+        Color.web("#E67E22"), 
+        Color.web("#1ABC9C"), 
+        Color.web("#9B59B6"),
+        Color.web("#2ECC71"), 
+        Color.web("#34495E"), 
+        Color.web("#7F8C8D"), 
+        Color.web("#C2185B"),
+        Color.web("#512E5F"), 
+        Color.web("#154360"), 
+        Color.web("#0E6251"),
+        Color.web("#784212"), 
+        Color.web("#7B241C"), 
+        Color.web("#1B4F72"), 
+        Color.web("#641E16"), 
+        Color.web("#4A235A"), 
+        Color.web("#0B5345") 
     };
 
     public void saveResult(char[][] matrix, int size, String filename) {
@@ -56,7 +56,7 @@ public class Save {
             FileWriter fileWrite = new FileWriter(resultFileName);
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
-                    fileWrite.write(matrix[i][j] + " ");
+                    fileWrite.write(matrix[i][j]);
                 }
                 fileWrite.write("\n"); 
             }                  
@@ -133,3 +133,4 @@ public class Save {
     }    
     
 }
+

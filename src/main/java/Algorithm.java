@@ -4,6 +4,9 @@ public class Algorithm {
         public int[][] temp;
         public long casesEvaluated = 0;
 
+        public volatile boolean isRunning = false;
+        public volatile boolean isFound = false;           
+
         public Algorithm (char[][] matrix, int size) {
             this.queens = size;
             this.matrix = matrix;
@@ -11,7 +14,7 @@ public class Algorithm {
         }
 
         // brute force by placing every queen horizontally
-        // and increment to move down 1 queen at a time
+        //and increment to move down 1 queen at a time
 
         public void initializeTemp(int size) {
             for (int i = 0; i < size; i++) {
@@ -47,56 +50,21 @@ public class Algorithm {
             }           
         }        
 
-        // public boolean iterateQueen(int size, int[][] temp, char[][] matrix) {
-        //     int visualCounter = 0;
-        //     boolean flag = false;
-        //     double totalDouble = Math.pow(size, size);
-        //     long total = (long) totalDouble;
-
-        //     this.casesEvaluated = 0;
-
-        //     for (int i = 0; i < total; i++) {
-        //         this.casesEvaluated++;
-
-        //         initializeTemp(size);
-
-        //         int digit = i;
-        //         for (int j = 0; j < size; j++) {
-        //             int column = digit % size;
-
-        //             temp[j][column] = 1;
-
-        //             digit /= size;
-        //         }
-        //         visualCounter++;
-        //         if (visualCounter == 1000) {
-        //             printProcessQueen(size, matrix, temp);
-        //             visualCounter = 0;
-        //         }
-
-        //         flag = checkQueen(temp, matrix, size);
-        //         if (flag) {
-        //             printFinalQueen(size, matrix, temp);
-        //             break;
-                    
-        //         }
-        //     }
-        //     if (flag == true) {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-
         public boolean processBruteForceQueen(int size, int[][] temp, char[][] matrix) {
             initializeTemp(size);
             this.casesEvaluated = 0;
 
+            this.isRunning = true;
+            this.isFound = false;
 
-            boolean flag = false;
+            boolean flagResult = false;
 
-            flag = bruteForceQueen(0, 0, size, size, temp);
-            if (flag) {
+            flagResult = bruteForceQueen(0, 0, size, size, temp);
+            
+            this.isRunning = false;
+            this.isFound = flagResult;
+
+            if (flagResult) {
                 printFinalQueen(size, matrix, temp);
                 return true;
                 
@@ -107,6 +75,8 @@ public class Algorithm {
         }
 
         public boolean bruteForceQueen(int queen, int currIdx, int totalQueen,  int size, int[][] temp) {
+            //bf naive approach O(c(n^2, n)) ensure all possible combination of the queen is tested
+
             if (queen == totalQueen) {
                 this.casesEvaluated++;
                 if (checkQueen(this.temp,this.matrix, size)) {

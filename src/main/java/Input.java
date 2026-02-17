@@ -1,4 +1,6 @@
 import java.io.File;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
@@ -82,6 +84,43 @@ public class Input {
         }
 
         return inputMatrix;
+    }
+
+    public String inputValidation () {
+        //check row & col
+        String temp[] = savedInputString.split("\n");
+        int row = temp.length;
+        int col = temp[0].trim().length();
+
+        if (row != col){
+            return "Panjang dan lebar tidak simetris";
+        }
+
+        for (int i = 0; i < row; i++) {
+            if (temp[i].trim().length() != col) {
+                return "Panjang dan lebar tidak simetris";
+            }
+        }
+
+        //check region
+
+        char[][] tempMatrix = inputToMatrix(savedInputString);
+
+        Set<Character> regions = new HashSet<>();
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                regions.add(tempMatrix[i][j]);
+            }
+        }
+
+        if (regions.size() != row || regions.size() != col){
+            return "Daerah tidak simetris dengan dimensi papan";
+        }
+
+        return null;
+
+
     }
 
 }
