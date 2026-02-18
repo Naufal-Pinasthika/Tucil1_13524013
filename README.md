@@ -11,7 +11,11 @@ Aplikasi ini memvisualisasikan papan dan solusi yang ditemukan kepada user.
 
 ## Requirement Program
 
-*   **Java Development Kit (JDK)**: Versi 25 (Sesuai konfigurasi *project*, namun dapat disesuaikan ke versi LTS seperti 21).
+*   **Java Development Kit (JDK)**: Versi 25 (Sesuai konfigurasi *project*, namun dapat disesuaikan ke versi LTS seperti 21). Cara menyesuaikan versi dengan JDK dapat mengganti kode pada 
+build.gradle
+```cmd
+languageVersion = JavaLanguageVersion.of(25) <- ganti sesuai versi Anda 
+```
 *   **Gradle**: Digunakan sebagai *build tool*. Versi *wrapper* sudah disertakan dalam repositori.
 
 ## Cara Mengkompilasi Program
@@ -30,9 +34,9 @@ chmod +x gradlew
 ```
 
 ## Cara Menjalankan dan Menggunakan Program
-Setelah proses kompilasi berhasil, Anda dapat menjalankan aplikasi langsung menggunakan Gradle.
+Setelah proses kompilasi berhasil, Anda dapat menjalankan aplikasi.
 
-### Menjalankan Aplikasi
+### Opsi 1: Menggunakan Gradle (Disarankan untuk Development)
 **Windows:**
 ```cmd
 .\gradlew.bat run
@@ -54,3 +58,7 @@ Setelah proses kompilasi berhasil, Anda dapat menjalankan aplikasi langsung meng
 *   `data/`: Berisi contoh file tes (`tc_1.txt`, dll).
 *   `test/`: Berisi contoh solusi berdasarkan test case yang diberikan.
 *   `docs/`: Berisi dokumen laporan tugas kecil 1 IF2211.
+
+## Penulis
+Anindya Naufal Pinasthika - 13524013
+
