@@ -36,7 +36,7 @@ chmod +x gradlew
 ## Cara Menjalankan dan Menggunakan Program
 Setelah proses kompilasi berhasil, Anda dapat menjalankan aplikasi.
 
-### Opsi 1: Menggunakan Gradle (Disarankan untuk Development)
+### Gradle
 **Windows:**
 ```cmd
 .\gradlew.bat run
