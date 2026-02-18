@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'application'
-    // GANTI KE 0.1.0 (Agar support Gradle 8+)
     id 'org.openjfx.javafxplugin' version '0.1.0' 
 }
 
@@ -10,7 +9,6 @@ repositories {
 }
 
 javafx {
-    // TETAP DI 21.0.6 (Karena versi 25 belum ada di server)
     version = "21.0.6" 
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing']
 }
