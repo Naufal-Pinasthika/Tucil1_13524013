@@ -45,11 +45,12 @@ Setelah proses kompilasi berhasil, Anda dapat menjalankan aplikasi langsung meng
 
 ### Cara Menggunakan
 1.  Saat aplikasi terbuka, Anda akan diberikan pilihan untuk memilih dalam mengupload via .txt atau membuat secara manual.
-2.  Pilih tombol untuk mengunggah file papan permainan (`.txt`) atau menginput manuual via keybaord.
+2.  Pilih tombol untuk mengunggah file papan permainan (`.txt`) atau menginput manual via keybaord.
 3.  Format file input `.txt` diharapkan merepresentasikan papan permainan, di mana karakter yang berbeda (huruf) mewakili wilayah warna yang berbeda.
 4.  Setelah file dipilih, program akan memproses solusi via brute force dan menampilkan solusi visualisasi pada papan.
 
 ## Struktur Folder
 *   `src/main/java`: Berisi kode sumber utama (Algorithm, GUI, dll).
 *   `data/`: Berisi contoh file tes (`tc_1.txt`, dll).
-*   `test/`: Berisi contoh solusi.
+*   `test/`: Berisi contoh solusi berdasarkan test case yang diberikan.
+*   `docs/`: Berisi dokumen laporan tugas kecil 1 IF2211.
